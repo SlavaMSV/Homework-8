@@ -38,8 +38,7 @@ void PrintMatrix(int[,] matrix, string message)
 
 int[,] RowDescendingSortMatrix(int[,] matrix)
 {
-    int temp1;
-    int temp2;
+    int temp;
     for (int i = 0; i < matrix.GetLength(0); i++)
     {
         for (int j = 0; j < matrix.GetLength(1); j++)
@@ -48,10 +47,9 @@ int[,] RowDescendingSortMatrix(int[,] matrix)
             {
                 if (matrix[i, k] > matrix[i, j])
                 {
-                    temp1 = matrix[i, k];
-                    temp2 = matrix[i, j];
-                    matrix[i, j] = temp1;
-                    matrix[i, k] = temp2;
+                    temp = matrix[i, j];
+                    matrix[i, j] = matrix[i,k];
+                    matrix[i, k] = temp;
                 }
             }
         }
