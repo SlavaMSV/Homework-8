@@ -14,25 +14,13 @@ int[,,] InitThreeDArray()
 {
     int[,,] array = new int[2, 2, 2];
     Random rnd = new Random();
-    array[0, 0, 0] = rnd.Next(0, 100);
     for (int i = 0; i < array.GetLength(0); i++)
     {
         for (int j = 0; j < array.GetLength(1); j++)
         {
-            for (int k = 1; k < array.GetLength(2); k++)
+            for (int k = 0; k < array.GetLength(2); k++)
             {
-                array[i, j, k] = rnd.Next(0, 100);
-                while (true)
-                {
-                    if (array[i, j, k] != array[i, j, k - 1])
-                    {
-                        break;
-                    }
-                    else
-                    {
-                        array[i, j, k] = rnd.Next(0, 100);
-                    }
-                }
+                array[i, j, k] = rnd.Next(10, 100);
             }
         }
     }
